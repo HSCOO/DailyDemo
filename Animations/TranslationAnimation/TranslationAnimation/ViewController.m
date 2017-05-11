@@ -67,9 +67,11 @@
 }
 
 - (void)changeTranslation{
-
+//1、不需要改变位置，也可以通过保持动画效果，达到不闪回
 //    [self normalAnimation];
+//2、使用animateWithDuration
 //    [self viewAnimation];
+//3、重新赋值坐标
     [self customAnimation];
 }
 
