@@ -1,0 +1,16 @@
+PODS:
+  - PYSearch (0.9.1)
+
+DEPENDENCIES:
+  - PYSearch
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - PYSearch
+
+SPEC CHECKSUMS:
+  PYSearch: 76dee18eea3309b60921a5d6a69390a63a5dda15
+
+PODFILE CHECKSUM: dcee00c5e03089054727064bb72b2ff81c476f55
+
+COCOAPODS: 1.5.3

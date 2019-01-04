@@ -1,0 +1,555 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06300240A9B3E43381FFB8752CB5677A /* Pods-SearchDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD759B2B4128884E4507254B0627DB0 /* Pods-SearchDemo-dummy.m */; };
+		08DF4F4224F514B9DE4ED5C7349EE967 /* UIView+PYSearchExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 02979685B847E17BF936898DC8A099F4 /* UIView+PYSearchExtension.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		210FE4560B0269840E04B220078F5BC7 /* UIColor+PYSearchExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = D25F8FD5B809B49BC73BB399DF560C81 /* UIColor+PYSearchExtension.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		28DC045FB271AD1F2D76680486EE875B /* PYSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE31C5DB4A01B83E5C17AC6BED40AAE /* PYSearchViewController.m */; };
+		687C556A26F595C9E6C4287D75EA1D4E /* PYSearchConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7447796B937A2B5C96255AEFC129C /* PYSearchConst.m */; };
+		86B59CD23337409E83F902A4D1EE032E /* PYSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A7561C2442ED91758C4DD7C02D75D80 /* PYSearch.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9343E7D99FB3FCE002A0E8362E069059 /* PYSearchViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2989BB8D0579F47046C3009B6588902F /* PYSearchViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B2B7E6DC304898E0C6A043026252FAC7 /* NSBundle+PYSearchExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 60AF4D01FE21619148319C4DDD4A75DF /* NSBundle+PYSearchExtension.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CC4A57D71609520EA31521CFFB0C0548 /* PYSearch-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8AD33EFA5E729B299037A0C6CD9A16 /* PYSearch-dummy.m */; };
+		D237B969A8E9E5C35D54FB97E246D8DB /* PYSearchConst.h in Headers */ = {isa = PBXBuildFile; fileRef = 9975133DF2C133670707294C7AEB65E9 /* PYSearchConst.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D4FB20308BD930A97C4EF48780412D26 /* PYSearchSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED200E2A9DBFA7ABFE7983E7A219901 /* PYSearchSuggestionViewController.m */; };
+		D52BDC19B5B0DA9C734099D6BBA13677 /* UIView+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F7F0A22F0EB941736B2B78F49BF0F6 /* UIView+PYSearchExtension.m */; };
+		DD4797893B091BEB85EDA1D9178FE43D /* UIColor+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E43431CDA56BDA5BB75D60934FAB2A7A /* UIColor+PYSearchExtension.m */; };
+		F7E82245EECFEA5D02107F7FD5F8BD69 /* PYSearchSuggestionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 29F11144B450AD128CDA60CA87FA42B0 /* PYSearchSuggestionViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FA6D78C3B106E9A23A4475A93F2C404F /* NSBundle+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 446BE086A3899F307A6E70E47DF9909F /* NSBundle+PYSearchExtension.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8C901FB00AE52B6101FDA8273DD488AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 820EC2A4B379D65C50D86B5B59E42286;
+			remoteInfo = PYSearch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02979685B847E17BF936898DC8A099F4 /* UIView+PYSearchExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+PYSearchExtension.h"; path = "PYSearch/UIView+PYSearchExtension.h"; sourceTree = "<group>"; };
+		0A1163A2EE98DF36B89E830807B841C9 /* PYSearch-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PYSearch-prefix.pch"; sourceTree = "<group>"; };
+		0E0817DBBB25A71BCBE42923A8C79B36 /* Pods-SearchDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SearchDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		23309C65F88CFB9FD5327998464FA502 /* Pods-SearchDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SearchDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2989BB8D0579F47046C3009B6588902F /* PYSearchViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PYSearchViewController.h; path = PYSearch/PYSearchViewController.h; sourceTree = "<group>"; };
+		29F11144B450AD128CDA60CA87FA42B0 /* PYSearchSuggestionViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PYSearchSuggestionViewController.h; path = PYSearch/PYSearchSuggestionViewController.h; sourceTree = "<group>"; };
+		2ED200E2A9DBFA7ABFE7983E7A219901 /* PYSearchSuggestionViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PYSearchSuggestionViewController.m; path = PYSearch/PYSearchSuggestionViewController.m; sourceTree = "<group>"; };
+		35C7447796B937A2B5C96255AEFC129C /* PYSearchConst.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PYSearchConst.m; path = PYSearch/PYSearchConst.m; sourceTree = "<group>"; };
+		446BE086A3899F307A6E70E47DF9909F /* NSBundle+PYSearchExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+PYSearchExtension.m"; path = "PYSearch/NSBundle+PYSearchExtension.m"; sourceTree = "<group>"; };
+		60AF4D01FE21619148319C4DDD4A75DF /* NSBundle+PYSearchExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+PYSearchExtension.h"; path = "PYSearch/NSBundle+PYSearchExtension.h"; sourceTree = "<group>"; };
+		61C862EA8114EA16281FFF0A30F3F3AE /* libPYSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPYSearch.a; path = libPYSearch.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		64F7F0A22F0EB941736B2B78F49BF0F6 /* UIView+PYSearchExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+PYSearchExtension.m"; path = "PYSearch/UIView+PYSearchExtension.m"; sourceTree = "<group>"; };
+		6E38897AEFC86493E8E1CFA94251E1B6 /* Pods-SearchDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SearchDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		80229C54FBBF4CB99847CAD3EE0F5EEB /* libPods-SearchDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-SearchDemo.a"; path = "libPods-SearchDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86D544FC7013A37824229D3F5FD22DC7 /* Pods-SearchDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SearchDemo.release.xcconfig"; sourceTree = "<group>"; };
+		8A7561C2442ED91758C4DD7C02D75D80 /* PYSearch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PYSearch.h; path = PYSearch/PYSearch.h; sourceTree = "<group>"; };
+		8DE31C5DB4A01B83E5C17AC6BED40AAE /* PYSearchViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PYSearchViewController.m; path = PYSearch/PYSearchViewController.m; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9975133DF2C133670707294C7AEB65E9 /* PYSearchConst.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PYSearchConst.h; path = PYSearch/PYSearchConst.h; sourceTree = "<group>"; };
+		CE8AD33EFA5E729B299037A0C6CD9A16 /* PYSearch-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PYSearch-dummy.m"; sourceTree = "<group>"; };
+		D25F8FD5B809B49BC73BB399DF560C81 /* UIColor+PYSearchExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+PYSearchExtension.h"; path = "PYSearch/UIColor+PYSearchExtension.h"; sourceTree = "<group>"; };
+		E43431CDA56BDA5BB75D60934FAB2A7A /* UIColor+PYSearchExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PYSearchExtension.m"; path = "PYSearch/UIColor+PYSearchExtension.m"; sourceTree = "<group>"; };
+		EDD759B2B4128884E4507254B0627DB0 /* Pods-SearchDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SearchDemo-dummy.m"; sourceTree = "<group>"; };
+		F191BA3B35539D95C4011C85A7F9534E /* PYSearch.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PYSearch.xcconfig; sourceTree = "<group>"; };
+		F5DDD7D2DDA95E70BCEE3CA255978192 /* Pods-SearchDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SearchDemo-resources.sh"; sourceTree = "<group>"; };
+		FB8D6958C58C40513AA7B2B3AE145119 /* Pods-SearchDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SearchDemo-frameworks.sh"; sourceTree = "<group>"; };
+		FE6DA86BDC6D0B9B6C970B6DCFC6B122 /* PYSearch.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = PYSearch.bundle; path = PYSearch/PYSearch.bundle; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6B3B09F19C111C3F46E06D2F1ECFFA23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5C4038327069D18A0C2FD82E1D526F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E8BF437738522D5B803BA052671A037 /* PYSearch */ = {
+			isa = PBXGroup;
+			children = (
+				60AF4D01FE21619148319C4DDD4A75DF /* NSBundle+PYSearchExtension.h */,
+				446BE086A3899F307A6E70E47DF9909F /* NSBundle+PYSearchExtension.m */,
+				8A7561C2442ED91758C4DD7C02D75D80 /* PYSearch.h */,
+				9975133DF2C133670707294C7AEB65E9 /* PYSearchConst.h */,
+				35C7447796B937A2B5C96255AEFC129C /* PYSearchConst.m */,
+				29F11144B450AD128CDA60CA87FA42B0 /* PYSearchSuggestionViewController.h */,
+				2ED200E2A9DBFA7ABFE7983E7A219901 /* PYSearchSuggestionViewController.m */,
+				2989BB8D0579F47046C3009B6588902F /* PYSearchViewController.h */,
+				8DE31C5DB4A01B83E5C17AC6BED40AAE /* PYSearchViewController.m */,
+				D25F8FD5B809B49BC73BB399DF560C81 /* UIColor+PYSearchExtension.h */,
+				E43431CDA56BDA5BB75D60934FAB2A7A /* UIColor+PYSearchExtension.m */,
+				02979685B847E17BF936898DC8A099F4 /* UIView+PYSearchExtension.h */,
+				64F7F0A22F0EB941736B2B78F49BF0F6 /* UIView+PYSearchExtension.m */,
+				A8516B678C74AAAC3C311D28C27DC9A0 /* Resources */,
+				C1CC71ACA1F739F1FBFE6F2F258B1AC8 /* Support Files */,
+			);
+			name = PYSearch;
+			path = PYSearch;
+			sourceTree = "<group>";
+		};
+		6BC9E34E9A5803236D409DF08AD8AE4B /* Pods-SearchDemo */ = {
+			isa = PBXGroup;
+			children = (
+				23309C65F88CFB9FD5327998464FA502 /* Pods-SearchDemo-acknowledgements.markdown */,
+				0E0817DBBB25A71BCBE42923A8C79B36 /* Pods-SearchDemo-acknowledgements.plist */,
+				EDD759B2B4128884E4507254B0627DB0 /* Pods-SearchDemo-dummy.m */,
+				FB8D6958C58C40513AA7B2B3AE145119 /* Pods-SearchDemo-frameworks.sh */,
+				F5DDD7D2DDA95E70BCEE3CA255978192 /* Pods-SearchDemo-resources.sh */,
+				6E38897AEFC86493E8E1CFA94251E1B6 /* Pods-SearchDemo.debug.xcconfig */,
+				86D544FC7013A37824229D3F5FD22DC7 /* Pods-SearchDemo.release.xcconfig */,
+			);
+			name = "Pods-SearchDemo";
+			path = "Target Support Files/Pods-SearchDemo";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */,
+				EB974D7B2E67814FC611509EC4350D48 /* Pods */,
+				C260F184F14A1108C596DDC9C88A4DC2 /* Products */,
+				E0D81903C82300A6ED1F523D06BEDCF1 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A8516B678C74AAAC3C311D28C27DC9A0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FE6DA86BDC6D0B9B6C970B6DCFC6B122 /* PYSearch.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C1CC71ACA1F739F1FBFE6F2F258B1AC8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F191BA3B35539D95C4011C85A7F9534E /* PYSearch.xcconfig */,
+				CE8AD33EFA5E729B299037A0C6CD9A16 /* PYSearch-dummy.m */,
+				0A1163A2EE98DF36B89E830807B841C9 /* PYSearch-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PYSearch";
+			sourceTree = "<group>";
+		};
+		C260F184F14A1108C596DDC9C88A4DC2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80229C54FBBF4CB99847CAD3EE0F5EEB /* libPods-SearchDemo.a */,
+				61C862EA8114EA16281FFF0A30F3F3AE /* libPYSearch.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E0D81903C82300A6ED1F523D06BEDCF1 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6BC9E34E9A5803236D409DF08AD8AE4B /* Pods-SearchDemo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		EB974D7B2E67814FC611509EC4350D48 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E8BF437738522D5B803BA052671A037 /* PYSearch */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		88015722B9B26E7899BF31D42640A457 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2B7E6DC304898E0C6A043026252FAC7 /* NSBundle+PYSearchExtension.h in Headers */,
+				86B59CD23337409E83F902A4D1EE032E /* PYSearch.h in Headers */,
+				D237B969A8E9E5C35D54FB97E246D8DB /* PYSearchConst.h in Headers */,
+				F7E82245EECFEA5D02107F7FD5F8BD69 /* PYSearchSuggestionViewController.h in Headers */,
+				9343E7D99FB3FCE002A0E8362E069059 /* PYSearchViewController.h in Headers */,
+				210FE4560B0269840E04B220078F5BC7 /* UIColor+PYSearchExtension.h in Headers */,
+				08DF4F4224F514B9DE4ED5C7349EE967 /* UIView+PYSearchExtension.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C21184FA6299990D812128AA32634909 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		820EC2A4B379D65C50D86B5B59E42286 /* PYSearch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E745F0E867ECD6C303364B65A2D78E40 /* Build configuration list for PBXNativeTarget "PYSearch" */;
+			buildPhases = (
+				88015722B9B26E7899BF31D42640A457 /* Headers */,
+				E22951DA50DCE9B908EABAE284157ADE /* Sources */,
+				6B3B09F19C111C3F46E06D2F1ECFFA23 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PYSearch;
+			productName = PYSearch;
+			productReference = 61C862EA8114EA16281FFF0A30F3F3AE /* libPYSearch.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F6870793BA3828D0A1B096E1E20C4DDC /* Pods-SearchDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7E4B1B7AEE877EACDFC033827AA0D65 /* Build configuration list for PBXNativeTarget "Pods-SearchDemo" */;
+			buildPhases = (
+				C21184FA6299990D812128AA32634909 /* Headers */,
+				EF85BFAAF718598E5A6621E744570BAB /* Sources */,
+				A5C4038327069D18A0C2FD82E1D526F4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D995D392AC905134E23A7229BBC3F61 /* PBXTargetDependency */,
+			);
+			name = "Pods-SearchDemo";
+			productName = "Pods-SearchDemo";
+			productReference = 80229C54FBBF4CB99847CAD3EE0F5EEB /* libPods-SearchDemo.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = C260F184F14A1108C596DDC9C88A4DC2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F6870793BA3828D0A1B096E1E20C4DDC /* Pods-SearchDemo */,
+				820EC2A4B379D65C50D86B5B59E42286 /* PYSearch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E22951DA50DCE9B908EABAE284157ADE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA6D78C3B106E9A23A4475A93F2C404F /* NSBundle+PYSearchExtension.m in Sources */,
+				CC4A57D71609520EA31521CFFB0C0548 /* PYSearch-dummy.m in Sources */,
+				687C556A26F595C9E6C4287D75EA1D4E /* PYSearchConst.m in Sources */,
+				D4FB20308BD930A97C4EF48780412D26 /* PYSearchSuggestionViewController.m in Sources */,
+				28DC045FB271AD1F2D76680486EE875B /* PYSearchViewController.m in Sources */,
+				DD4797893B091BEB85EDA1D9178FE43D /* UIColor+PYSearchExtension.m in Sources */,
+				D52BDC19B5B0DA9C734099D6BBA13677 /* UIView+PYSearchExtension.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF85BFAAF718598E5A6621E744570BAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06300240A9B3E43381FFB8752CB5677A /* Pods-SearchDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7D995D392AC905134E23A7229BBC3F61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PYSearch;
+			target = 820EC2A4B379D65C50D86B5B59E42286 /* PYSearch */;
+			targetProxy = 8C901FB00AE52B6101FDA8273DD488AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0ACA7EE100901E6F050BC354F68B7ACE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86D544FC7013A37824229D3F5FD22DC7 /* Pods-SearchDemo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42E6590A972627A284529A4039E7863A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E38897AEFC86493E8E1CFA94251E1B6 /* Pods-SearchDemo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		60DAF49CA7A9F362148D49C3C3123B2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		782CDF3B1B2ADEC80C104AEA30BC4A85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F191BA3B35539D95C4011C85A7F9534E /* PYSearch.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/PYSearch/PYSearch-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = PYSearch;
+				PRODUCT_NAME = PYSearch;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		87A2FDD10B1FDF2F7F554FAE4BADF5E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F191BA3B35539D95C4011C85A7F9534E /* PYSearch.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/PYSearch/PYSearch-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = PYSearch;
+				PRODUCT_NAME = PYSearch;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C4EAA84F44D044E108500A81C635F21E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60DAF49CA7A9F362148D49C3C3123B2A /* Debug */,
+				C4EAA84F44D044E108500A81C635F21E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E745F0E867ECD6C303364B65A2D78E40 /* Build configuration list for PBXNativeTarget "PYSearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87A2FDD10B1FDF2F7F554FAE4BADF5E0 /* Debug */,
+				782CDF3B1B2ADEC80C104AEA30BC4A85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7E4B1B7AEE877EACDFC033827AA0D65 /* Build configuration list for PBXNativeTarget "Pods-SearchDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42E6590A972627A284529A4039E7863A /* Debug */,
+				0ACA7EE100901E6F050BC354F68B7ACE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
