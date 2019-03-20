@@ -1,0 +1,512 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		181B1AF1224259520097534A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B1AF0224259520097534A /* AppDelegate.swift */; };
+		181B1AF3224259520097534A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B1AF2224259520097534A /* ViewController.swift */; };
+		181B1AF6224259520097534A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181B1AF4224259520097534A /* Main.storyboard */; };
+		181B1AF8224259550097534A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181B1AF7224259550097534A /* Assets.xcassets */; };
+		181B1AFB224259550097534A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181B1AF9224259550097534A /* LaunchScreen.storyboard */; };
+		181B1B0622425AB30097534A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181B1B0522425AB30097534A /* Home.storyboard */; };
+		181B1B0922425ACE0097534A /* Kind.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181B1B0722425ACE0097534A /* Kind.storyboard */; };
+		181B1B0B22425AFC0097534A /* Opimal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181B1B0A22425AFC0097534A /* Opimal.storyboard */; };
+		181B1B0E22425B100097534A /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181B1B0C22425B100097534A /* Mine.storyboard */; };
+		181B1B1722425C8C0097534A /* QHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B1B1622425C8C0097534A /* QHomeViewController.swift */; };
+		181B1B1922425C980097534A /* QKindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B1B1822425C980097534A /* QKindViewController.swift */; };
+		181B1B1B22425CA30097534A /* QOpimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B1B1A22425CA30097534A /* QOpimalViewController.swift */; };
+		181B1B1D22425CAD0097534A /* QMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B1B1C22425CAD0097534A /* QMineViewController.swift */; };
+		27EA05B66A2DB52398D73774 /* Pods_Quan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 975C5DC3729E0CA94EE3F2C8 /* Pods_Quan.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		181B1AED224259520097534A /* Quan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		181B1AF0224259520097534A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		181B1AF2224259520097534A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		181B1AF5224259520097534A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		181B1AF7224259550097534A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		181B1AFA224259550097534A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		181B1AFC224259550097534A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		181B1B0522425AB30097534A /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		181B1B0822425ACE0097534A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Quan/Base.lproj/Kind.storyboard; sourceTree = "<group>"; };
+		181B1B0A22425AFC0097534A /* Opimal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Opimal.storyboard; sourceTree = "<group>"; };
+		181B1B0D22425B100097534A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Quan/Base.lproj/Mine.storyboard; sourceTree = "<group>"; };
+		181B1B1622425C8C0097534A /* QHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHomeViewController.swift; sourceTree = "<group>"; };
+		181B1B1822425C980097534A /* QKindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QKindViewController.swift; sourceTree = "<group>"; };
+		181B1B1A22425CA30097534A /* QOpimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QOpimalViewController.swift; sourceTree = "<group>"; };
+		181B1B1C22425CAD0097534A /* QMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QMineViewController.swift; sourceTree = "<group>"; };
+		406F1594389D35AB6C0F79FC /* Pods-Quan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Quan/Pods-Quan.release.xcconfig"; sourceTree = "<group>"; };
+		975C5DC3729E0CA94EE3F2C8 /* Pods_Quan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB35876638CFB405612BF29B /* Pods-Quan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quan/Pods-Quan.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		181B1AEA224259520097534A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27EA05B66A2DB52398D73774 /* Pods_Quan.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		181B1AE4224259520097534A = {
+			isa = PBXGroup;
+			children = (
+				181B1B1E224261DA0097534A /* Search */,
+				181B1B0F22425B6A0097534A /* Tabs */,
+				181B1AEF224259520097534A /* Quan */,
+				181B1AEE224259520097534A /* Products */,
+				CCB9B682D6808FDEF8F1F941 /* Pods */,
+				7BE0C4099074189BB0F768B1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		181B1AEE224259520097534A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				181B1AED224259520097534A /* Quan.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		181B1AEF224259520097534A /* Quan */ = {
+			isa = PBXGroup;
+			children = (
+				181B1AF0224259520097534A /* AppDelegate.swift */,
+				181B1AF2224259520097534A /* ViewController.swift */,
+				181B1AF4224259520097534A /* Main.storyboard */,
+				181B1AF7224259550097534A /* Assets.xcassets */,
+				181B1AF9224259550097534A /* LaunchScreen.storyboard */,
+				181B1AFC224259550097534A /* Info.plist */,
+			);
+			path = Quan;
+			sourceTree = "<group>";
+		};
+		181B1B0F22425B6A0097534A /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				181B1B1322425B870097534A /* Mine */,
+				181B1B1222425B7D0097534A /* Opimal */,
+				181B1B1122425B760097534A /* Kind */,
+				181B1B1022425B710097534A /* Home */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		181B1B1022425B710097534A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				181B1B0522425AB30097534A /* Home.storyboard */,
+				181B1B1622425C8C0097534A /* QHomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		181B1B1122425B760097534A /* Kind */ = {
+			isa = PBXGroup;
+			children = (
+				181B1B0722425ACE0097534A /* Kind.storyboard */,
+				181B1B1822425C980097534A /* QKindViewController.swift */,
+			);
+			path = Kind;
+			sourceTree = "<group>";
+		};
+		181B1B1222425B7D0097534A /* Opimal */ = {
+			isa = PBXGroup;
+			children = (
+				181B1B0A22425AFC0097534A /* Opimal.storyboard */,
+				181B1B1A22425CA30097534A /* QOpimalViewController.swift */,
+			);
+			path = Opimal;
+			sourceTree = "<group>";
+		};
+		181B1B1322425B870097534A /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				181B1B0C22425B100097534A /* Mine.storyboard */,
+				181B1B1C22425CAD0097534A /* QMineViewController.swift */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		181B1B1E224261DA0097534A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		7BE0C4099074189BB0F768B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				975C5DC3729E0CA94EE3F2C8 /* Pods_Quan.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CCB9B682D6808FDEF8F1F941 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EB35876638CFB405612BF29B /* Pods-Quan.debug.xcconfig */,
+				406F1594389D35AB6C0F79FC /* Pods-Quan.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		181B1AEC224259520097534A /* Quan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 181B1AFF224259550097534A /* Build configuration list for PBXNativeTarget "Quan" */;
+			buildPhases = (
+				513A78AF530F3DB00BFAE7AF /* [CP] Check Pods Manifest.lock */,
+				181B1AE9224259520097534A /* Sources */,
+				181B1AEA224259520097534A /* Frameworks */,
+				181B1AEB224259520097534A /* Resources */,
+				271C232D587A9300164CA83C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Quan;
+			productName = Quan;
+			productReference = 181B1AED224259520097534A /* Quan.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		181B1AE5224259520097534A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = YJL;
+				TargetAttributes = {
+					181B1AEC224259520097534A = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 181B1AE8224259520097534A /* Build configuration list for PBXProject "Quan" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 181B1AE4224259520097534A;
+			productRefGroup = 181B1AEE224259520097534A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				181B1AEC224259520097534A /* Quan */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		181B1AEB224259520097534A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				181B1AFB224259550097534A /* LaunchScreen.storyboard in Resources */,
+				181B1AF8224259550097534A /* Assets.xcassets in Resources */,
+				181B1B0B22425AFC0097534A /* Opimal.storyboard in Resources */,
+				181B1B0922425ACE0097534A /* Kind.storyboard in Resources */,
+				181B1B0E22425B100097534A /* Mine.storyboard in Resources */,
+				181B1AF6224259520097534A /* Main.storyboard in Resources */,
+				181B1B0622425AB30097534A /* Home.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		271C232D587A9300164CA83C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Quan/Pods-Quan-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
+				"${BUILT_PRODUCTS_DIR}/JXSegmentedView/JXSegmentedView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JXSegmentedView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quan/Pods-Quan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		513A78AF530F3DB00BFAE7AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Quan-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		181B1AE9224259520097534A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				181B1B1722425C8C0097534A /* QHomeViewController.swift in Sources */,
+				181B1AF3224259520097534A /* ViewController.swift in Sources */,
+				181B1B1922425C980097534A /* QKindViewController.swift in Sources */,
+				181B1AF1224259520097534A /* AppDelegate.swift in Sources */,
+				181B1B1B22425CA30097534A /* QOpimalViewController.swift in Sources */,
+				181B1B1D22425CAD0097534A /* QMineViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		181B1AF4224259520097534A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				181B1AF5224259520097534A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		181B1AF9224259550097534A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				181B1AFA224259550097534A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		181B1B0722425ACE0097534A /* Kind.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				181B1B0822425ACE0097534A /* Base */,
+			);
+			name = Kind.storyboard;
+			sourceTree = "<group>";
+		};
+		181B1B0C22425B100097534A /* Mine.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				181B1B0D22425B100097534A /* Base */,
+			);
+			name = Mine.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		181B1AFD224259550097534A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		181B1AFE224259550097534A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		181B1B00224259550097534A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB35876638CFB405612BF29B /* Pods-Quan.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Quan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = YJL.Quan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		181B1B01224259550097534A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 406F1594389D35AB6C0F79FC /* Pods-Quan.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Quan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = YJL.Quan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		181B1AE8224259520097534A /* Build configuration list for PBXProject "Quan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				181B1AFD224259550097534A /* Debug */,
+				181B1AFE224259550097534A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		181B1AFF224259550097534A /* Build configuration list for PBXNativeTarget "Quan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				181B1B00224259550097534A /* Debug */,
+				181B1B01224259550097534A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 181B1AE5224259520097534A /* Project object */;
+}
