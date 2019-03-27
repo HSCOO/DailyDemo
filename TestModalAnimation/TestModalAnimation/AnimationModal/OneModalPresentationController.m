@@ -9,6 +9,9 @@
 // 角度转弧度
 #define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
 
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
 #import "OneModalPresentationController.h"
 
 @interface OneModalPresentationController()
@@ -73,7 +76,11 @@ UIViewControllerAnimatedTransitioning
     id<UIViewControllerTransitionCoordinator> transitionCoordinator = self.presentingViewController.transitionCoordinator;
     
     [transitionCoordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-        self.bgView.alpha = 0.f;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            self.bgView.alpha = 0.f;
+        });
+        
     } completion:nil];
 }
 
@@ -81,8 +88,11 @@ UIViewControllerAnimatedTransitioning
     if (!completed) {
         return;
     }
-    [self.bgView removeFromSuperview];
-    self.bgView = nil;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [self.bgView removeFromSuperview];
+        self.bgView = nil;
+    });
 }
 
 #pragma mark - 计算目标控制器的view的大小
@@ -155,11 +165,12 @@ UIViewControllerAnimatedTransitioning
     // 上下留80
 
     // 屏幕顶部：
-    CGFloat w = 400;
-    CGFloat h = 400;
-    CGFloat x = (screenW - w ) / 2;
-    CGFloat y = 40;
+    CGFloat w = SCREEN_WIDTH;
+    CGFloat h = SCREEN_WIDTH;
+    CGFloat x = 0;
+    CGFloat y = -h;
     CGRect topFrame = CGRectMake(x, y, w, h);
+    // 设置开始位置，在屏幕外
     toView.frame = topFrame;
 
     // 屏幕中间：
@@ -168,89 +179,38 @@ UIViewControllerAnimatedTransitioning
     // 屏幕底部
     CGRect bottomFrame = CGRectMake(x, screenH + h, w, h);  //加10是因为动画果冻效果，会露出屏幕一点
 
-
     NSTimeInterval duration = [self transitionDuration:transitionContext];
     // 复合动画
     
-    // Y轴上的滑动 到 中间
-    CABasicAnimation *animationY = [CABasicAnimation animationWithKeyPath:@"transform.translation.y"];
-//    animationY.fromValue = @(0);
-    animationY.toValue = @((screenH - h ) / 2);
-    animationY.removedOnCompletion = NO;
-//    animationY.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-    animationY.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-    animationY.duration = duration;
-    animationY.fillMode = kCAFillModeForwards;
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration + 0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        toView.frame = centerFrame;
-    });
-    
-    // Y轴的关键帧动画
-//    CAKeyframeAnimation *animationY = [CAKeyframeAnimation animationWithKeyPath:@"position"];
-//    animationY.autoreverses = NO;
-//    animationY.duration = duration;
-//    animationY.removedOnCompletion = NO;
-////    animationY.fillMode = kCAFillModeForwards;
-//
-//    animationY.values = @[
-//                          [NSValue valueWithCGPoint:toView.frame.origin],
-//                          [NSValue valueWithCGPoint:CGPointMake(toView.frame.origin.x, toView.frame.origin.y + 400)],
-//                          ];
-//    animationY.keyTimes = @[
-//                            [NSNumber numberWithFloat:0.0],
-//                            [NSNumber numberWithFloat:duration],
-//                            ];
-//
-//    animationY.timingFunctions = @[
-//                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear],
-//                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]
-//                                    ];
-    
-    
-    
-    // 旋转的关键帧动画
-    CAKeyframeAnimation *animationRo = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation"];
-    animationRo.autoreverses = NO;
-    animationRo.duration = duration;
-    // 设置关键帧位置
-    animationRo.values = @[
-                           @(DEGREES_TO_RADIANS(0.0)),
-                           @(DEGREES_TO_RADIANS(15.0)),
-                           @(DEGREES_TO_RADIANS(-5.0)),
-                           @(DEGREES_TO_RADIANS(1.0)),
-                           @(DEGREES_TO_RADIANS(0.0))
-                           ];
-    
-    animationRo.keyTimes = @[
-                             [NSNumber numberWithFloat:0.0],
-                             [NSNumber numberWithFloat:0.0],
-                             [NSNumber numberWithFloat:duration * 0.6],
-                             [NSNumber numberWithFloat:duration * 0.2],
-                             [NSNumber numberWithFloat:duration * 0.2]
-                             ];
-    
-    animationRo.timingFunctions = @[
-                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear],
-                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear],
-                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn],
-                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear],
-                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut],
-                                    ];
-    
-    
-    [toView.layer addAnimation:animationRo forKey:@"ro"];
-    [toView.layer addAnimation:animationY forKey:@"y"];
-    
-//    CAAnimationGroup *group = [CAAnimationGroup animation];
-//    group.animations = @[animationY,animationRo];
-//    group.removedOnCompletion = NO;
-//    group.duration = duration;
-//
-//    [toView.layer addAnimation:group forKey:@"rxx"];
-    // 结束
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    // present动画
+    if (isPresenting) {
         
+        CAAnimationGroup *topToCenterGroup = [self topToCenterGroup:duration];
+        [toView.layer addAnimation:topToCenterGroup forKey:@"topToCenterGroup"];
+        // 动画结束后赋值最终位置，相当于设置了toValue
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration + 0.001 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            // 赋值最终位置
+            toView.frame = centerFrame;
+        });
+        
+    }
+    // dismiss动画
+    else{
+        
+        CAAnimationGroup *centerToBottomGroup = [self centerToBottomGroup:duration];
+        [fromView.layer addAnimation:centerToBottomGroup forKey:@"centerToBottomGroup"];
+        
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration + 0.001 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            // 赋值最终的位置
+//            fromView.transform = CGAffineTransformMakeRotation(-M_1_PI * 0.75);
+//            fromView.frame = bottomFrame;
+//        });
+        
+    }
+    
+    // 动画结束
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 模态动画完成，如果不实现这个方法，所有方法都不能接收
         BOOL wasCancelled = [transitionContext transitionWasCancelled];
         [transitionContext completeTransition:!wasCancelled];
     });
@@ -306,6 +266,73 @@ UIViewControllerAnimatedTransitioning
     // 动画结束...
 }
 
+#pragma mark - Animation Group Maker
+
+- (CAAnimationGroup *)centerToBottomGroup:(NSTimeInterval)duration{
+    // Y轴上的滑动 中间到底部
+    CABasicAnimation *animationY = [CABasicAnimation animationWithKeyPath:@"transform.translation.y"];
+    animationY.fromValue = @((SCREEN_HEIGHT - SCREEN_WIDTH) / 2);
+    animationY.toValue = @(SCREEN_HEIGHT);
+    animationY.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animationY.duration = duration;
+    
+    // 旋转
+    CABasicAnimation *animationRo = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    animationRo.fromValue = @(DEGREES_TO_RADIANS(0.0));
+    animationRo.toValue = @(-M_1_PI * 0.75);
+    animationRo.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animationRo.duration = duration;
+    
+    CAAnimationGroup *group = [CAAnimationGroup animation];
+    group.animations = @[animationY, animationRo];
+//    group.animations = @[animationY];
+    group.removedOnCompletion = NO;
+    group.fillMode = kCAFillModeForwards;
+
+    return group;
+}
+
+- (CAAnimationGroup *)topToCenterGroup:(NSTimeInterval)duration{
+    
+    // Y轴上的滑动 顶部到中间
+    CABasicAnimation *animationY = [CABasicAnimation animationWithKeyPath:@"transform.translation.y"];
+    animationY.fromValue = @(-SCREEN_WIDTH);
+    animationY.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animationY.duration = duration;
+    
+    
+    // 旋转的关键帧动画
+    CAKeyframeAnimation *animationRo = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation"];
+    animationRo.autoreverses = NO;
+    animationRo.duration = duration;
+    // 设置关键帧位置
+    animationRo.values = @[
+                           @(DEGREES_TO_RADIANS(15.0)),
+                           @(DEGREES_TO_RADIANS(-5.0)),
+                           @(DEGREES_TO_RADIANS(1.0)),
+                           @(DEGREES_TO_RADIANS(0.0))
+                           ];
+    
+    animationRo.keyTimes = @[
+                             [NSNumber numberWithFloat:0.0],
+                             [NSNumber numberWithFloat:duration * 0.6],
+                             [NSNumber numberWithFloat:duration * 0.3],
+                             [NSNumber numberWithFloat:duration * 0.1]
+                             ];
+    
+    animationRo.timingFunctions = @[
+                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear],
+                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn],
+                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear],
+                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut],
+                                    ];
+    
+    CAAnimationGroup *group = [CAAnimationGroup animation];
+    group.animations = @[animationY,animationRo];
+    
+    return group;
+}
+
 #pragma mark - getter
 
 - (UIView *)bgView{
@@ -325,6 +352,5 @@ UIViewControllerAnimatedTransitioning
 - (void)tapDismiss{
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
-
 
 @end
