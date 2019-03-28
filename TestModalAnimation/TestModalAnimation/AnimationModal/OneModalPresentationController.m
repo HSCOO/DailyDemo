@@ -12,6 +12,8 @@
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
+#define DURATION 0.8
+
 #import "OneModalPresentationController.h"
 
 @interface OneModalPresentationController()
@@ -61,7 +63,10 @@ UIViewControllerAnimatedTransitioning
     
     self.bgView.alpha = 0.f;
     [transitionCoordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-        self.bgView.alpha = 0.4f;
+        [UIView animateWithDuration:DURATION animations:^{
+            self.bgView.alpha = 0.4f;
+        }];
+        
     } completion:nil];
 }
 
@@ -76,10 +81,13 @@ UIViewControllerAnimatedTransitioning
     id<UIViewControllerTransitionCoordinator> transitionCoordinator = self.presentingViewController.transitionCoordinator;
     
     [transitionCoordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
+        
+        [UIView animateWithDuration:DURATION animations:^{
             self.bgView.alpha = 0.f;
-        });
+        }];
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(DURATION * NSEC_PER_SEC + 0.01)), dispatch_get_main_queue(), ^{
+//            self.bgView.alpha = 0.f;
+//        });
         
     } completion:nil];
 }
@@ -88,7 +96,7 @@ UIViewControllerAnimatedTransitioning
     if (!completed) {
         return;
     }
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(DURATION * NSEC_PER_SEC + 0.01)), dispatch_get_main_queue(), ^{
         
         [self.bgView removeFromSuperview];
         self.bgView = nil;
@@ -139,7 +147,7 @@ UIViewControllerAnimatedTransitioning
 #pragma mark - 动画实现
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext{
-    return [transitionContext isAnimated] ? 0.4 : 0;
+    return [transitionContext isAnimated] ? DURATION : 0;
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext{
@@ -157,109 +165,125 @@ UIViewControllerAnimatedTransitioning
 
     // 判断是present 还是 dismiss
     BOOL isPresenting = (fromViewController == self.presentingViewController);
-
-    CGFloat screenW = CGRectGetWidth(containerView.bounds);
-    CGFloat screenH = CGRectGetHeight(containerView.bounds);
-
-    // 左右留35
-    // 上下留80
-
-    // 屏幕顶部：
-    CGFloat w = SCREEN_WIDTH;
-    CGFloat h = SCREEN_WIDTH;
-    CGFloat x = 0;
-    CGFloat y = -h;
-    CGRect topFrame = CGRectMake(x, y, w, h);
-    // 设置开始位置，在屏幕外
-    toView.frame = topFrame;
-
-    // 屏幕中间：
-    CGRect centerFrame = CGRectMake(x, (screenH - h ) / 2, w, h);
-
-    // 屏幕底部
-    CGRect bottomFrame = CGRectMake(x, screenH + h, w, h);  //加10是因为动画果冻效果，会露出屏幕一点
-
-    NSTimeInterval duration = [self transitionDuration:transitionContext];
-    // 复合动画
     
-    // present动画
+    CGFloat x = 30;
+    CGFloat y = -1 * SCREEN_HEIGHT;
+    CGFloat w = SCREEN_WIDTH - x * 2;
+    CGFloat h = SCREEN_HEIGHT - 30 * 2;
+    CGRect topFrame = CGRectMake(x, y, w, h);
+    
+    // 屏幕中间：
+    CGRect centerFrame = CGRectMake(x, (SCREEN_HEIGHT - h) / 2, w, h);
+    
+    // 屏幕底部
+    CGRect bottomFrame = CGRectMake(x, SCREEN_HEIGHT + 20, w, h);
+    
+    NSTimeInterval duration = [self transitionDuration:transitionContext];
+    
     if (isPresenting) {
         
-        CAAnimationGroup *topToCenterGroup = [self topToCenterGroup:duration];
-        [toView.layer addAnimation:topToCenterGroup forKey:@"topToCenterGroup"];
-        // 动画结束后赋值最终位置，相当于设置了toValue
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration + 0.001 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            // 赋值最终位置
-            toView.frame = centerFrame;
+        toView.frame = topFrame;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            toView.transform = CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(15.0));
         });
         
+        [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.75 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            toView.frame = centerFrame;
+        } completion:^(BOOL finished) {
+            BOOL wasCancelled = [transitionContext transitionWasCancelled];
+            [transitionContext completeTransition:!wasCancelled];
+        }];
+        
+        [UIView animateWithDuration:duration*0.6 animations:^{
+            toView.layer.transform = CATransform3DMakeRotation(DEGREES_TO_RADIANS(-5.5), 0, 0, 0);
+            
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:duration*0.2 animations:^{
+                toView.transform = CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(1.0));
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:duration*0.2 animations:^{
+                    toView.transform = CGAffineTransformMakeRotation(0.0);
+                } completion:nil];
+            }];
+        }];
+        
     }
-    // dismiss动画
     else{
         
-        CAAnimationGroup *centerToBottomGroup = [self centerToBottomGroup:duration];
-        [fromView.layer addAnimation:centerToBottomGroup forKey:@"centerToBottomGroup"];
-        
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration + 0.001 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            // 赋值最终的位置
-//            fromView.transform = CGAffineTransformMakeRotation(-M_1_PI * 0.75);
-//            fromView.frame = bottomFrame;
-//        });
-        
+        [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:10.f initialSpringVelocity:0.1f options:UIViewAnimationOptionCurveEaseOut animations:^{
+            
+            fromView.frame = bottomFrame;
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                fromView.transform = CGAffineTransformMakeRotation(M_1_PI * 0.75);
+            });
+            
+        } completion:^(BOOL finished) {
+            BOOL wasCancelled = [transitionContext transitionWasCancelled];
+            [transitionContext completeTransition:!wasCancelled];
+        }];
     }
-    
-    // 动画结束
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 模态动画完成，如果不实现这个方法，所有方法都不能接收
-        BOOL wasCancelled = [transitionContext transitionWasCancelled];
-        [transitionContext completeTransition:!wasCancelled];
-    });
-    
-    
-    
+
+    // 屏幕顶部：
+//    CGFloat w = SCREEN_WIDTH;
+//    CGFloat h = SCREEN_WIDTH;
+//    CGFloat x = 0;
+//    CGFloat y = 0;
+//    CGRect topFrame = CGRectMake(x, y, w, h);
+//    // 设置开始位置，在屏幕外
+//    toView.frame = topFrame;
+//
+//    // 屏幕中间：
+//    CGRect centerFrame = CGRectMake(x, (SCREEN_HEIGHT - h ) / 2, w, h);
+//
+//    CGRect bottomFrame = CGRectMake(x, SCREEN_HEIGHT + h, w, h);
+//
+//    NSTimeInterval duration = [self transitionDuration:transitionContext];
+//
+//
+//    // present动画
 //    if (isPresenting) {
-//        // 开始状态
-//        toView.transform = CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(15.0));
-//        toView.frame = topFrame;
-//    }
 //
+//        CAAnimationGroup *topToCenterGroup = [self topToCenterGroup:duration];
+//        [toView.layer addAnimation:topToCenterGroup forKey:@"topToCenterGroup"];
 //
+//        CASpringAnimation *animationSpring = [CASpringAnimation animationWithKeyPath:@"position.y"];
+//        animationSpring.fromValue = @(y);
+//    //    animationSpring.toValue = @(SCREEN_WIDTH);
+//        //阻力
+//        animationSpring.damping = 15;
+//        //初始速率
+//        animationSpring.initialVelocity = 10;
+//        //持续时间
+//        animationSpring.duration = duration;
 //
-//    [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.75f initialSpringVelocity:1.f options:UIViewAnimationOptionCurveEaseIn animations:^{
+//        animationSpring.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
 //
-//        if (isPresenting){
+//        animationSpring.removedOnCompletion = NO;
+//        animationSpring.fillMode = kCAFillModeBoth;
 //
+//        [toView.layer addAnimation:animationSpring forKey:@"spring"];
+//
+//        // 动画结束后赋值最终位置，相当于设置了toValue
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration + 0.001 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            // 赋值最终位置
 //            toView.frame = centerFrame;
-//        }else{
+//        });
 //
-//            fromView.transform = CGAffineTransformMakeRotation(-M_1_PI * 0.75);
-//            fromView.frame = bottomFrame;
-//        }
+//    }
+//    // dismiss动画
+//    else{
 //
-//    } completion:^(BOOL finished) {
+//        CAAnimationGroup *centerToBottomGroup = [self centerToBottomGroup:duration];
+//        [fromView.layer addAnimation:centerToBottomGroup forKey:@"centerToBottomGroup"];
+//
+//    }
+
+    // 动画结束
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        // 模态动画完成，如果不实现这个方法，所有方法都不能接收
 //        BOOL wasCancelled = [transitionContext transitionWasCancelled];
 //        [transitionContext completeTransition:!wasCancelled];
-//    }];
-//
-//    if (!isPresenting) {
-//        return;
-//    }
-//
-//    // 角度摆动
-//    [UIView animateWithDuration:duration * 0.6 animations:^{
-//        toView.transform = CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(-5.0));
-//    } completion:^(BOOL finished) {
-//
-//        [UIView animateWithDuration:duration * 0.2 animations:^{
-//            toView.transform = CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(1.0));
-//        } completion:^(BOOL finished) {
-//
-//            [UIView animateWithDuration:duration * 0.2 animations:^{
-//                toView.transform = CGAffineTransformMakeRotation(0.0);
-//            } completion:nil];
-//        }];
-//    }];
-
+//    });
 }
 
 - (void)animationEnded:(BOOL) transitionCompleted{
@@ -271,21 +295,18 @@ UIViewControllerAnimatedTransitioning
 - (CAAnimationGroup *)centerToBottomGroup:(NSTimeInterval)duration{
     // Y轴上的滑动 中间到底部
     CABasicAnimation *animationY = [CABasicAnimation animationWithKeyPath:@"transform.translation.y"];
-    animationY.fromValue = @((SCREEN_HEIGHT - SCREEN_WIDTH) / 2);
-    animationY.toValue = @(SCREEN_HEIGHT);
-    animationY.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animationY.toValue = @(SCREEN_HEIGHT * 3);
+//    animationY.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     animationY.duration = duration;
     
     // 旋转
     CABasicAnimation *animationRo = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
-    animationRo.fromValue = @(DEGREES_TO_RADIANS(0.0));
     animationRo.toValue = @(-M_1_PI * 0.75);
-    animationRo.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+//    animationRo.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     animationRo.duration = duration;
     
     CAAnimationGroup *group = [CAAnimationGroup animation];
-    group.animations = @[animationY, animationRo];
-//    group.animations = @[animationY];
+    group.animations = @[animationY,animationRo];
     group.removedOnCompletion = NO;
     group.fillMode = kCAFillModeForwards;
 
@@ -303,7 +324,6 @@ UIViewControllerAnimatedTransitioning
     
     // 旋转的关键帧动画
     CAKeyframeAnimation *animationRo = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation"];
-    animationRo.autoreverses = NO;
     animationRo.duration = duration;
     // 设置关键帧位置
     animationRo.values = @[
@@ -316,19 +336,20 @@ UIViewControllerAnimatedTransitioning
     animationRo.keyTimes = @[
                              [NSNumber numberWithFloat:0.0],
                              [NSNumber numberWithFloat:duration * 0.6],
-                             [NSNumber numberWithFloat:duration * 0.3],
-                             [NSNumber numberWithFloat:duration * 0.1]
+                             [NSNumber numberWithFloat:duration * 0.2],
+                             [NSNumber numberWithFloat:duration * 0.2]
                              ];
     
-    animationRo.timingFunctions = @[
-                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear],
-                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn],
-                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear],
-                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut],
-                                    ];
+//    animationRo.timingFunctions = @[
+//                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear],
+//                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn],
+//                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear],
+//                                    [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut],
+//                                    ];
     
     CAAnimationGroup *group = [CAAnimationGroup animation];
-    group.animations = @[animationY,animationRo];
+    
+    group.animations = @[animationRo];
     
     return group;
 }
