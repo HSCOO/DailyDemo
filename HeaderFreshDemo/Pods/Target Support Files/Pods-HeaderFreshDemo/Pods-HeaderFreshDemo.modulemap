@@ -1,0 +1,6 @@
+framework module Pods_HeaderFreshDemo {
+  umbrella header "Pods-HeaderFreshDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
