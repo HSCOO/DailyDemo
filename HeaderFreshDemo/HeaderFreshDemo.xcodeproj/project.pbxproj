@@ -13,12 +13,9 @@
 		18021F1C22F2EF47009C0AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18021F1B22F2EF47009C0AAA /* Assets.xcassets */; };
 		18021F1F22F2EF47009C0AAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18021F1D22F2EF47009C0AAA /* LaunchScreen.storyboard */; };
 		18021F2222F2EF47009C0AAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18021F2122F2EF47009C0AAA /* main.m */; };
-		18021F2A22F2FB62009C0AAA /* SectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18021F2922F2FB62009C0AAA /* SectionController.m */; };
-		18021F2D22F2FBD1009C0AAA /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18021F2C22F2FBD1009C0AAA /* HomeModel.m */; };
+		18021F2A22F2FB62009C0AAA /* LableSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18021F2922F2FB62009C0AAA /* LableSectionController.m */; };
 		18021F3022F2FBE9009C0AAA /* LabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18021F2F22F2FBE9009C0AAA /* LabelCell.m */; };
-		18021F3322F2FC23009C0AAA /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18021F3222F2FC23009C0AAA /* ActivityCell.m */; };
 		18021F3622F2FD07009C0AAA /* LabelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18021F3522F2FD07009C0AAA /* LabelModel.m */; };
-		18021F3922F2FD1B009C0AAA /* ActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18021F3822F2FD1B009C0AAA /* ActivityModel.m */; };
 		23FAC79C3151DA3B120FA287 /* Pods_HeaderFreshDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 176581075A25FDCD965A9901 /* Pods_HeaderFreshDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,18 +32,12 @@
 		18021F1E22F2EF47009C0AAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18021F2022F2EF47009C0AAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18021F2122F2EF47009C0AAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		18021F2822F2FB62009C0AAA /* SectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SectionController.h; sourceTree = "<group>"; };
-		18021F2922F2FB62009C0AAA /* SectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SectionController.m; sourceTree = "<group>"; };
-		18021F2B22F2FBD1009C0AAA /* HomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
-		18021F2C22F2FBD1009C0AAA /* HomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
+		18021F2822F2FB62009C0AAA /* LableSectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LableSectionController.h; sourceTree = "<group>"; };
+		18021F2922F2FB62009C0AAA /* LableSectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LableSectionController.m; sourceTree = "<group>"; };
 		18021F2E22F2FBE9009C0AAA /* LabelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelCell.h; sourceTree = "<group>"; };
 		18021F2F22F2FBE9009C0AAA /* LabelCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelCell.m; sourceTree = "<group>"; };
-		18021F3122F2FC23009C0AAA /* ActivityCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityCell.h; sourceTree = "<group>"; };
-		18021F3222F2FC23009C0AAA /* ActivityCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityCell.m; sourceTree = "<group>"; };
 		18021F3422F2FD07009C0AAA /* LabelModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelModel.h; sourceTree = "<group>"; };
 		18021F3522F2FD07009C0AAA /* LabelModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelModel.m; sourceTree = "<group>"; };
-		18021F3722F2FD1B009C0AAA /* ActivityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityModel.h; sourceTree = "<group>"; };
-		18021F3822F2FD1B009C0AAA /* ActivityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityModel.m; sourceTree = "<group>"; };
 		E7FA50F8E49F5B4C97FC629A /* Pods-HeaderFreshDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeaderFreshDemo.release.xcconfig"; path = "Target Support Files/Pods-HeaderFreshDemo/Pods-HeaderFreshDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,18 +78,12 @@
 				18021F1322F2EF45009C0AAA /* AppDelegate.m */,
 				18021F1522F2EF45009C0AAA /* ViewController.h */,
 				18021F1622F2EF45009C0AAA /* ViewController.m */,
-				18021F2822F2FB62009C0AAA /* SectionController.h */,
-				18021F2922F2FB62009C0AAA /* SectionController.m */,
+				18021F2822F2FB62009C0AAA /* LableSectionController.h */,
+				18021F2922F2FB62009C0AAA /* LableSectionController.m */,
 				18021F2E22F2FBE9009C0AAA /* LabelCell.h */,
 				18021F2F22F2FBE9009C0AAA /* LabelCell.m */,
-				18021F3122F2FC23009C0AAA /* ActivityCell.h */,
-				18021F3222F2FC23009C0AAA /* ActivityCell.m */,
-				18021F2B22F2FBD1009C0AAA /* HomeModel.h */,
-				18021F2C22F2FBD1009C0AAA /* HomeModel.m */,
 				18021F3422F2FD07009C0AAA /* LabelModel.h */,
 				18021F3522F2FD07009C0AAA /* LabelModel.m */,
-				18021F3722F2FD1B009C0AAA /* ActivityModel.h */,
-				18021F3822F2FD1B009C0AAA /* ActivityModel.m */,
 				18021F1822F2EF45009C0AAA /* Main.storyboard */,
 				18021F1B22F2EF47009C0AAA /* Assets.xcassets */,
 				18021F1D22F2EF47009C0AAA /* LaunchScreen.storyboard */,
@@ -240,14 +225,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				18021F3622F2FD07009C0AAA /* LabelModel.m in Sources */,
-				18021F2D22F2FBD1009C0AAA /* HomeModel.m in Sources */,
-				18021F3922F2FD1B009C0AAA /* ActivityModel.m in Sources */,
 				18021F1722F2EF45009C0AAA /* ViewController.m in Sources */,
 				18021F3022F2FBE9009C0AAA /* LabelCell.m in Sources */,
 				18021F2222F2EF47009C0AAA /* main.m in Sources */,
 				18021F1422F2EF45009C0AAA /* AppDelegate.m in Sources */,
-				18021F3322F2FC23009C0AAA /* ActivityCell.m in Sources */,
-				18021F2A22F2FB62009C0AAA /* SectionController.m in Sources */,
+				18021F2A22F2FB62009C0AAA /* LableSectionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +373,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 85VA373D3S;
 				INFOPLIST_FILE = HeaderFreshDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -408,7 +392,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 85VA373D3S;
 				INFOPLIST_FILE = HeaderFreshDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

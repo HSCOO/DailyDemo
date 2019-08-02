@@ -7,4 +7,5 @@ target 'HeaderFreshDemo' do
 
   # Pods for HeaderFreshDemo
 	pod 'IGListKit'
+  pod 'MJRefresh'
 end

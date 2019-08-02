@@ -15,7 +15,18 @@
 }
 
 - (BOOL)isEqualToDiffableObject:(LabelModel <IGListDiffable>*)object {
-    return [self.text isEqualToString:object.text];
+    return [self isEqual:object];
+}
+
+- (BOOL)isEqual:(LabelModel *)object
+{
+    if (self == object) {
+        return YES;
+    } else if (self == nil || object == nil || ![object isKindOfClass:[self class]]) {
+        return NO;
+    }
+    return
+    (_text == object->_text ? YES : [_text isEqual:object->_text]);
 }
 
 @end

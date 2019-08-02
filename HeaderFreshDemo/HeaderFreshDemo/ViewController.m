@@ -7,17 +7,21 @@
 //
 
 #import "ViewController.h"
-#import "HomeModel.h"
+#import "LabelModel.h"
 #import <IGListKit/IGListKit.h>
-#import "SectionController.h"
+#import "LableSectionController.h"
+#import <MJRefresh.h>
 
-@interface ViewController ()<IGListAdapterDataSource, UIScrollViewDelegate>
+static NSInteger const kPerCount = 10;
 
-@property (strong, nonatomic) NSMutableArray <HomeModel *>*models;
+@interface ViewController ()<IGListAdapterDataSource>
+
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) IGListAdapter *adapter;
 
-@property (assign, nonatomic) BOOL loading;
+@property (strong, nonatomic) NSMutableArray *models;
+/**开始页数*/
+@property (assign, nonatomic) NSInteger currentPageNum;
 
 @end
 
@@ -26,47 +30,65 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    HomeModel *model = [HomeModel new];
-    model.showActivity = NO;
-    NSMutableArray *labels = [NSMutableArray array];
-    for (NSInteger i = 0; i < 25; i++) {
+    
+    self.currentPageNum = 0;
+    [self _data];
+    [self _collectionViewSetting];
+}
+
+- (void)_data{
+    
+    NSInteger currentCount = self.currentPageNum * kPerCount;
+    NSInteger nextPageNum = self.currentPageNum + 1;
+    NSInteger nextCount = nextPageNum * kPerCount;
+    
+    for (NSInteger i = currentCount; i < nextCount; i++) {
         LabelModel *labelModel = [LabelModel new];
         labelModel.text = [NSString stringWithFormat:@"%ld",i];
-        [labels addObject:labelModel];
+        [self.models addObject:labelModel];
     }
-    model.texts = labels;
     
-    [self.models addObject:model];
+    self.currentPageNum = nextPageNum;
+}
+
+- (void)_collectionViewSetting{
+    // 翻转collectionview
+    self.collectionView.transform = CGAffineTransformMakeRotation(-M_PI);
+    self.collectionView.scrollIndicatorInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, self.collectionView.bounds.size.width - 8.0);// 为啥是8，打开视图层级看下应该差不多
     
     self.adapter.dataSource = self;
     self.adapter.collectionView = self.collectionView;
-    self.adapter.scrollViewDelegate = self;
+    
+    // 翻转之后，添加footer
+    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+          
+            [self _data];
+            [self.adapter performUpdatesAnimated:NO completion:nil];
+            [self.collectionView.mj_footer endRefreshing];
+        });
+    }];
+    footer.refreshingTitleHidden = YES;
+    
+    self.collectionView.mj_footer = footer;
 }
+
+#pragma mark - IGListAdapterDataSource -
 
 - (NSArray<id<IGListDiffable>> *)objectsForListAdapter:(IGListAdapter *)listAdapter{
     return self.models;
 }
 
 - (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter sectionControllerForObject:(id)object{
-    return SectionController.new;
+    if ([object isMemberOfClass:[LabelModel class]]) {
+        return LableSectionController.new;
+    }
+    return nil;
 }
 
 - (UIView *)emptyViewForListAdapter:(IGListAdapter *)listAdapter{return  nil;}
 
-
-#pragma mark - UIScrollViewDelegate -
-
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
-    CGFloat y = targetContentOffset->y;
-    NSLog(@"y -- %f", y);
-    if (!self.loading && y <= 10) {
-        self.loading = YES;
-        HomeModel *model = [HomeModel new];
-        model.showActivity = NO;
-        
-        [self.models addObject:model];
-    }
-}
+#pragma mark - Getter -
 
 - (IGListAdapter *)adapter{
     if (!_adapter) {
@@ -75,11 +97,12 @@
     return _adapter;
 }
 
-- (NSMutableArray<HomeModel *> *)models{
+- (NSMutableArray *)models{
     if (!_models) {
         _models = [NSMutableArray array];
     }
     return _models;
 }
+
 
 @end

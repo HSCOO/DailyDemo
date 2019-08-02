@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-HeaderFreshDemo/Pods-HeaderFreshDemo-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework
+${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
