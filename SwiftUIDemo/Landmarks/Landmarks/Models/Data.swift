@@ -12,6 +12,8 @@ import CoreLocation
 import UIKit
 
 let landmarkData: [Landmark] = load("landmarkData.json")
+let features = landmarkData.filter{ $0.isFeatured }
+let hikeData: [Hike] = load("hikeData.json")
 
 func load<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
     let data: Data
@@ -53,6 +55,7 @@ final class ImageStore{
             let imageSource = CGImageSourceCreateWithURL(url as NSURL, nil),
             let image = CGImageSourceCreateImageAtIndex(imageSource, 0, nil)
         else {
+            print("Couldn't load image \(name).jpg from main bundle.")
             fatalError("Couldn't load image \(name).jpg from main bundle.")
         }
         return image
