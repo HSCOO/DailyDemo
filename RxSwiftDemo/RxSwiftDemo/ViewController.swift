@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    
 
 
 //        let usernameValid = userNameOutlet.rx.text.orEmpty

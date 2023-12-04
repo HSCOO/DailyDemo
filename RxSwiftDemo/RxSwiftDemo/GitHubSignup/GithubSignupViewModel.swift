@@ -11,28 +11,21 @@ import RxCocoa
 import RxSwift
 
 class GithubSignupViewModel{
-
+    
     let validatedUsername: Observable<ValidationResult>
     let validatedPassword: Observable<ValidationResult>
     let validatedPasswordRepeated: Observable<ValidationResult>
-
+    
     let signupEnabled: Observable<Bool>
     let signedIn: Observable<Bool>
     let signingIn: Observable<Bool>
-
-
-    init(input:(
-        username: Observable<String>,
-        password: Observable<String>,
-        repeatedPassword: Observable<String>,
-        loginTaps: Observable<Void>
-        ),
-         dependency:(
-        API: GitHubAPI,
-        validationService: GitHubValidationService,
-        wireframe: wiref
-        )
-    ) {
-
+    
+    init(validatedUsername: Observable<ValidationResult>, validatedPassword: Observable<ValidationResult>, validatedPasswordRepeated: Observable<ValidationResult>, signupEnabled: Observable<Bool>, signedIn: Observable<Bool>, signingIn: Observable<Bool>) {
+        self.validatedUsername = validatedUsername
+        self.validatedPassword = validatedPassword
+        self.validatedPasswordRepeated = validatedPasswordRepeated
+        self.signupEnabled = signupEnabled
+        self.signedIn = signedIn
+        self.signingIn = signingIn
     }
 }

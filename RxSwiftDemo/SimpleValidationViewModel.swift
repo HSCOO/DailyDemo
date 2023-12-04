@@ -21,9 +21,11 @@ class SimpleValidationViewModel {
         usernameValid = username
             .map{ $0.count >= minimalUsernameLength}
             .share(replay: 1, scope: .forever)
+        
         passwordValid = password
         .map{ $0.count >= minimalUsernameLength}
         .share(replay: 1, scope: .forever)
+        
         everythingValid = Observable.combineLatest(usernameValid, passwordValid){$0 && $1}
             .share(replay: 1, scope: .forever)
     }

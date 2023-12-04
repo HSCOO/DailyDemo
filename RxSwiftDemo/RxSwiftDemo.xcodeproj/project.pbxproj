@@ -19,6 +19,12 @@
 		18184B2F2397D3D200E96348 /* GithubSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18184B2E2397D3D200E96348 /* GithubSignupViewModel.swift */; };
 		18184B312397D44B00E96348 /* GitHubProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18184B302397D44B00E96348 /* GitHubProtocol.swift */; };
 		18184B342397D83A00E96348 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18184B332397D83A00E96348 /* Wireframe.swift */; };
+		C5CD38D92B19759C00A5AAFB /* TestFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CD38D82B19759C00A5AAFB /* TestFeature.swift */; };
+		C5CD38E42B19876B00A5AAFB /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CD38E32B19876B00A5AAFB /* ImagePickerViewController.swift */; };
+		C5CD38E82B198B1400A5AAFB /* UIImagePicker+RxCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CD38E72B198B1400A5AAFB /* UIImagePicker+RxCreate.swift */; };
+		C5CD38EA2B198CB800A5AAFB /* UIImagePickerController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CD38E92B198CB800A5AAFB /* UIImagePickerController+Rx.swift */; };
+		C5CD38EE2B1D6C3200A5AAFB /* NumbersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CD38ED2B1D6C3200A5AAFB /* NumbersViewController.swift */; };
+		C5CD38F12B1D71C200A5AAFB /* SimpleLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CD38F02B1D71C200A5AAFB /* SimpleLogin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +40,16 @@
 		18184B2C2397D23A00E96348 /* GitHubSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSignupViewController.swift; sourceTree = "<group>"; };
 		18184B2E2397D3D200E96348 /* GithubSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubSignupViewModel.swift; sourceTree = "<group>"; };
 		18184B302397D44B00E96348 /* GitHubProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubProtocol.swift; sourceTree = "<group>"; };
-		18184B332397D83A00E96348 /* Wireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = SOURCE_ROOT; };
+		18184B332397D83A00E96348 /* Wireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Wireframe.swift; path = RxSwiftDemo/Wireframe.swift; sourceTree = SOURCE_ROOT; };
 		2281B7F42AEE2E221C6A5AC9 /* Pods-RxSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		3D89859D0BD35D83B28D8774 /* libPods-RxSwiftDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RxSwiftDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		992EE1FA14D7976F8BE7B2EA /* Pods-RxSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		C5CD38D82B19759C00A5AAFB /* TestFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFeature.swift; sourceTree = "<group>"; };
+		C5CD38E32B19876B00A5AAFB /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
+		C5CD38E72B198B1400A5AAFB /* UIImagePicker+RxCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImagePicker+RxCreate.swift"; sourceTree = "<group>"; };
+		C5CD38E92B198CB800A5AAFB /* UIImagePickerController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+Rx.swift"; sourceTree = "<group>"; };
+		C5CD38ED2B1D6C3200A5AAFB /* NumbersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewController.swift; sourceTree = "<group>"; };
+		C5CD38F02B1D71C200A5AAFB /* SimpleLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLogin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,10 +85,15 @@
 		18184B0C23978BF200E96348 /* RxSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
-				18184B322397D82300E96348 /* Services */,
+				C5DFB90F2B1D9F130098C45D /* Location */,
+				C5CD38EF2B1D71B200A5AAFB /* SimpleLogin */,
+				C5CD38EC2B1D6C1100A5AAFB /* Numbers */,
+				C5CD38E22B19874500A5AAFB /* ImagePicker */,
+				18184B332397D83A00E96348 /* Wireframe.swift */,
 				18184B0D23978BF200E96348 /* AppDelegate.swift */,
 				18184B0F23978BF200E96348 /* SceneDelegate.swift */,
 				18184B1123978BF200E96348 /* ViewController.swift */,
+				C5CD38D82B19759C00A5AAFB /* TestFeature.swift */,
 				18184B212397AF8200E96348 /* SimpleValidationViewModel.swift */,
 				18184B2B2397D20000E96348 /* GitHubSignup */,
 				18184B1323978BF200E96348 /* Main.storyboard */,
@@ -97,20 +114,45 @@
 			path = GitHubSignup;
 			sourceTree = "<group>";
 		};
-		18184B322397D82300E96348 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				18184B332397D83A00E96348 /* Wireframe.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		338110A740436DE43EDD95E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				3D89859D0BD35D83B28D8774 /* libPods-RxSwiftDemo.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C5CD38E22B19874500A5AAFB /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				C5CD38E32B19876B00A5AAFB /* ImagePickerViewController.swift */,
+				C5CD38E72B198B1400A5AAFB /* UIImagePicker+RxCreate.swift */,
+				C5CD38E92B198CB800A5AAFB /* UIImagePickerController+Rx.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		C5CD38EC2B1D6C1100A5AAFB /* Numbers */ = {
+			isa = PBXGroup;
+			children = (
+				C5CD38ED2B1D6C3200A5AAFB /* NumbersViewController.swift */,
+			);
+			path = Numbers;
+			sourceTree = "<group>";
+		};
+		C5CD38EF2B1D71B200A5AAFB /* SimpleLogin */ = {
+			isa = PBXGroup;
+			children = (
+				C5CD38F02B1D71C200A5AAFB /* SimpleLogin.swift */,
+			);
+			path = SimpleLogin;
+			sourceTree = "<group>";
+		};
+		C5DFB90F2B1D9F130098C45D /* Location */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		FAFBBD99ACF1AD86F7E079BF /* Pods */ = {
@@ -222,9 +264,15 @@
 				18184B1223978BF200E96348 /* ViewController.swift in Sources */,
 				18184B0E23978BF200E96348 /* AppDelegate.swift in Sources */,
 				18184B1023978BF200E96348 /* SceneDelegate.swift in Sources */,
+				C5CD38E82B198B1400A5AAFB /* UIImagePicker+RxCreate.swift in Sources */,
 				18184B2F2397D3D200E96348 /* GithubSignupViewModel.swift in Sources */,
 				18184B342397D83A00E96348 /* Wireframe.swift in Sources */,
+				C5CD38EE2B1D6C3200A5AAFB /* NumbersViewController.swift in Sources */,
+				C5CD38EA2B198CB800A5AAFB /* UIImagePickerController+Rx.swift in Sources */,
 				18184B2D2397D23A00E96348 /* GitHubSignupViewController.swift in Sources */,
+				C5CD38E42B19876B00A5AAFB /* ImagePickerViewController.swift in Sources */,
+				C5CD38D92B19759C00A5AAFB /* TestFeature.swift in Sources */,
+				C5CD38F12B1D71C200A5AAFB /* SimpleLogin.swift in Sources */,
 				18184B222397AF8200E96348 /* SimpleValidationViewModel.swift in Sources */,
 				18184B312397D44B00E96348 /* GitHubProtocol.swift in Sources */,
 			);
@@ -372,7 +420,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 85VA373D3S;
+				DEVELOPMENT_TEAM = Q65ND625AT;
 				INFOPLIST_FILE = RxSwiftDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -391,7 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 85VA373D3S;
+				DEVELOPMENT_TEAM = Q65ND625AT;
 				INFOPLIST_FILE = RxSwiftDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
